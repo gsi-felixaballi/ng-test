@@ -1,6 +1,6 @@
-# NgTest 
+# NgTest  [![Build Status](https://travis-ci.org/gsi-alejandro/ng-test.svg?branch=master)](https://travis-ci.org/gsi-alejandro/ng-test)
 
-﻿## Introduction
+﻿### Introduction
 
 The goal of this technical test is to develop a new project from scratch in **Angular 4** code. So then we would like to receive your code with the following requirements/checklist of TODOs: 
 
