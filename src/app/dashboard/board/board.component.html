@@ -1,0 +1,23 @@
+<div>
+  <div class="row">
+    <div><app-small-chart (click)="updateGraph(boardGraphTypes.crimeServers)" [type]="boardGraphTypes.crimeServers" (loaded)="onLoad($event)"></app-small-chart></div>
+    <div><app-small-chart (click)="updateGraph(boardGraphTypes.malware)" [type]="boardGraphTypes.malware" (loaded)="onLoad($event)"></app-small-chart></div>
+    <div><app-small-chart (click)="updateGraph(boardGraphTypes.bots)" [type]="boardGraphTypes.bots" (loaded)="onLoad($event)"></app-small-chart></div>
+    <div><app-small-chart (click)="updateGraph(boardGraphTypes.credentials)" [type]="boardGraphTypes.credentials" (loaded)="onLoad($event)"></app-small-chart></div>
+    <div><app-small-chart (click)="updateGraph(boardGraphTypes.creditCards)" [type]="boardGraphTypes.creditCards" (loaded)="onLoad($event)"></app-small-chart></div>
+  </div>
+
+  <div class="card">
+    <h1>{{label}}</h1>
+    <div style="display: block">
+      <canvas *ngIf="lineChartData" baseChart height="340" style="width: 100%"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"></canvas>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,144 @@
+Details for {{data.indicator}}
+
+<div>
+  <div nz-row nzGutter="16">
+    <div nz-col class="gutter-row" nzSpan="8" style="min-height: 585px">
+      <div class="card">
+        <div nz-row class="chart-header">
+          <div nz-col nzSpan="8"><b>Severity</b></div>
+          <div nz-col nzSpan="8"><b>Confidence</b></div>
+          <div nz-col nzSpan="8"><b>ThreatScore</b></div>
+        </div>
+
+        <div class="fx-row">
+          <div nz-col nzSpan="8" class="doughnut">
+            <div class="overlay bad">
+              <span style="text-transform: uppercase"> {{data.severity}}</span>
+            </div>
+          </div>
+          <div nz-col nzSpan="8" class="doughnut">
+            <div style="display: block" *ngIf="doughnutChartData1">
+              <canvas baseChart
+                      [data]="doughnutChartData1"
+                      [labels]="doughnutChartLabels"
+                      [chartType]="doughnutChartType"
+                      [colors]="doughnutChartColors1"
+                      [options]="doughnutChartOptions"
+              ></canvas>
+            </div>
+            <div class="overlay good">
+              <span>{{data.confidence}}</span>
+            </div>
+          </div>
+          <div nz-col nzSpan="8" class="doughnut">
+            <div style="display: block" *ngIf="doughnutChartData2">
+              <canvas baseChart
+                      [data]="doughnutChartData2"
+                      [labels]="doughnutChartLabels"
+                      [chartType]="doughnutChartType"
+                      [colors]="doughnutChartColors2"
+                      [options]="doughnutChartOptions"
+              ></canvas>
+            </div>
+            <div class="overlay bad">
+              <span>{{data.threat_score}}</span>
+            </div>
+          </div>
+        </div>
+
+        <nz-divider></nz-divider>
+
+        <div class="text-details">
+          <div nz-row nzGutter="16">
+            <div nz-col nzSpan="7" class="text-right">
+              <b>Status</b>
+            </div>
+            <div nz-col nzSpan="17">
+              {{data.status === 1 ? 'Active' : 'Inactive'}}
+            </div>
+          </div>
+
+          <div nz-row nzGutter="16">
+            <div nz-col nzSpan="7" class="text-right">
+              <b>Type</b>
+            </div>
+            <div nz-col nzSpan="17">
+              {{data.type}}
+            </div>
+          </div>
+
+          <div nz-row nzGutter="16">
+            <div nz-col nzSpan="7" class="text-right">
+              <b>Indicator</b>
+            </div>
+            <div nz-col nzSpan="17">
+              {{data.indicator}}
+            </div>
+          </div>
+
+          <div nz-row nzGutter="16">
+            <div nz-col nzSpan="7" class="text-right">
+              <b>IP</b>
+            </div>
+            <div nz-col nzSpan="17">
+              <span class="info">{{data.ip}}</span>
+            </div>
+          </div>
+
+          <div nz-row nzGutter="16">
+            <div nz-col nzSpan="7" class="text-right">
+              <b>Tags</b>
+            </div>
+            <div nz-col nzSpan="17">
+              <span class="tag" *ngFor="let tag of data.tags">{{tag}}</span>
+            </div>
+          </div>
+
+          <div nz-row nzGutter="16">
+            <div nz-col nzSpan="7" class="text-right">
+              <b>Last Modified</b>
+            </div>
+            <div nz-col nzSpan="17">
+              <span>{{data.last_modified | date : 'yyyy-MM-dd HH:mm:ss'}}</span>
+            </div>
+          </div>
+
+          <div nz-row nzGutter="16">
+            <div nz-col nzSpan="7" class="text-right">
+              <b>Entries</b>
+            </div>
+            <div nz-col nzSpan="17">
+              <span>{{data.entries}}</span>
+            </div>
+          </div>
+
+          <div nz-row nzGutter="16">
+            <div nz-col nzSpan="7" class="text-right">
+              <b>Country</b>
+            </div>
+            <div nz-col nzSpan="17">
+              <span>{{data.country}}</span>
+            </div>
+          </div>
+
+          <div nz-row nzGutter="16">
+            <div nz-col nzSpan="7" class="text-right">
+              <b>ASN</b>
+            </div>
+            <div nz-col nzSpan="17">
+              <span>{{data.asn}}</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div nz-col class="gutter-row" nzSpan="16">
+      <nz-card>
+        <app-network-node [node_data]="node_data"
+                          [link_data]="link_data"></app-network-node>
+      </nz-card>
+    </div>
+  </div>
+</div>

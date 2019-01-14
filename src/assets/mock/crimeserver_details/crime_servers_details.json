@@ -1,0 +1,20 @@
+{
+  "data": {
+      "attributes": {
+        "status": 1,
+        "type": "URL (Malware URL)",
+        "indicator": "http://195.22.126.203/Azorm/",
+        "ip": "195.22.126.203",
+        "tags": ["AZORult"],
+        "last_modified": "2018-02-05T14:30:18.913843+00:00",
+        "entries": 1,
+        "country": "pl",
+        "asn": "198414",
+        "confidence": 85,
+        "threat_score": 64,
+        "severity": "very-high"
+      },
+      "id": "262962",
+      "type": "CrimeServer"
+    }
+}

@@ -1,0 +1,30 @@
+.container {
+  background-color: #fff;
+}
+
+.search {
+  margin-bottom: 8px;
+}
+
+.table {
+  tr {
+    td {
+      &:nth-child(8),
+      &:nth-child(9),
+      &:nth-child(10),
+      &:nth-child(11),
+      &:nth-child(5) {
+        text-align: center;
+      }
+    }
+    th {
+      &:nth-child(8),
+      &:nth-child(9),
+      &:nth-child(10),
+      &:nth-child(11),
+      &:nth-child(5) {
+        text-align: center;
+      }
+    }
+  }
+}

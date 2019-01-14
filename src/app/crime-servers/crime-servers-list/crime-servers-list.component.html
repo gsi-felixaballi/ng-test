@@ -1,0 +1,74 @@
+<nz-card nzType="inner" nzTitle="Crime Server showing 261026 results" [nzExtra]="extraTemplate">
+  <div >
+
+    <div class="search">
+      <div nz-row>
+        <div nz-col nzSpan="8" nzOffset="16">
+          <nz-input-group [nzPrefix]="suffixIconSearch">
+            <input type="text" nz-input placeholder="Search...">
+          </nz-input-group>
+          <ng-template #suffixIconSearch>
+            <i nz-icon type="search"></i>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="table">
+      <nz-table #smallTable
+                nzSize="small"
+                [nzShowPagination]="false"
+                [nzLoading]="loading"
+                [nzData]="dataSet">
+        <thead>
+        <tr>
+          <th>Seen</th>
+          <th>URL</th>
+          <th>Type</th>
+          <th>SubType</th>
+          <th>Status</th>
+          <th>TM Seen</th>
+          <th>TM Status</th>
+          <th>Evidences</th>
+          <th>@API</th>
+          <th>@FreeAPI</th>
+          <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of smallTable.data">
+          <td>{{data.seen | date:'MM/dd/yyyy hh:mm'}}</td>
+          <td>{{data.url}}</td>
+          <td>{{data.type}}</td>
+          <td>{{data.subType}}</td>
+          <td>
+            <i *ngIf="data.status === 'offline'" nz-icon [type]="'disconnect'" style="color: #dd0000"></i>
+            <i *ngIf="data.status === 'online'" nz-icon [type]="'share-alt'" style="color: #31a354"></i>
+          </td>
+          <td>{{data.tmSeen | date:'MM/dd/yyyy hh:mm'}}</td>
+          <td>{{data.tmStatus}}</td>
+          <td><i nz-icon type="close-circle" theme="outline" style="color: #dd0000"></i></td>
+          <td><i nz-icon type="question-circle" theme="outline" style="color: #dd0000"></i></td>
+          <td><i nz-icon type="question-circle" theme="outline" style="color: #dd0000"></i></td>
+          <td>
+            <a routerLink="/crime-servers/{{data.key}}"><i nz-icon type="zoom-in" theme="outline" style="color: #1890ff"></i></a>
+          </td>
+        </tr>
+        </tbody>
+      </nz-table>
+
+      <div style="text-align: right; margin-top: 16px" *ngIf="pages > 1">
+        <nz-pagination *ngIf="pages <= 20" [nzPageIndex]="1" [nzTotal]="pages" [nzItemRender]="renderItemTemplate"></nz-pagination>
+        <nz-pagination *ngIf="pages > 20" [nzPageIndex]="1" [nzTotal]="pages" nzShowQuickJumper [nzItemRender]="renderItemTemplate"></nz-pagination>
+        <ng-template #renderItemTemplate let-type let-page="page">
+          <a *ngIf="type==='pre'">Previous</a>
+          <a *ngIf="type==='next'">Next</a>
+          <a *ngIf="type==='page'">{{page}}</a>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nz-card>
+
+

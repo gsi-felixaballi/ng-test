@@ -1,0 +1,30 @@
+<nz-layout style="min-height: 100vh">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
+    <div class="logo">
+    </div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item><a routerLink="/" routerLinkActive="active"><i nz-icon type="home"></i>  <span>Home</span></a></li>
+      <li nz-menu-item><a routerLink="/crime-servers" routerLinkActive="active"><i nz-icon type="database"></i>  <span>Crime Servers</span></a></li>
+      <li nz-menu-item><a routerLink="/sparks" routerLinkActive="active"><i nz-icon type="thunderbolt"></i>  <span>Sparks</span></a></li>
+    </ul>
+  </nz-sider>
+
+  <nz-layout>
+    <nz-header style="background: #fff; padding:0;">
+      <div class="row">
+        <i class="trigger" nz-icon [type]="isCollapsed?'menu-unfold':'menu-fold'" (click)="isCollapsed=!isCollapsed"></i>
+
+        <div class="user">
+          Welcome, Username  <nz-avatar nzIcon="user" style="background-color:#87d068;"></nz-avatar>
+        </div>
+      </div>
+    </nz-header>
+    <nz-content style="margin:16px;">
+      <ng-content></ng-content>
+    </nz-content>
+    <nz-footer style="text-align: center;">Technical Test ©{{year}}. Implemented With Angular</nz-footer>
+  </nz-layout>
+</nz-layout>
+<ng-template #trigger>
+  <i nz-icon type="up"></i>
+</ng-template>

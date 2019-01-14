@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 -5px;
+  & > div {
+    flex: 1 1 0;
+    margin: 5px ;
+  }
+}
+
+.card {
+  margin-top: 16px;
+  background-color: #fff;
+  padding: 16px;
+}

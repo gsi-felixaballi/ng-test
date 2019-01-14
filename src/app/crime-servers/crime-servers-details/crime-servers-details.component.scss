@@ -1,0 +1,73 @@
+.card {
+  font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  background: #fff;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s;
+  border: 1px solid #e8e8e8;
+  padding: 24px 0;
+}
+
+.fx-row {
+  display: flex;
+  min-height: 54px;
+}
+
+.doughnut {
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+  }
+}
+
+.good {
+  color: #31a354;
+}
+
+.bad {
+  color: #dd0000;
+}
+
+.info {
+  color: deepskyblue;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.chart-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.text-details {
+  & > div {
+    margin-bottom: 16px;
+  }
+}
+
+.tag {
+  text-align: center;
+  border: 2px solid #000;
+  color: #000;
+  font-weight: 800;
+  padding: 6px 8px;
+  user-select: none;
+}
