@@ -1,18 +1,4 @@
-# NgTest
-
-## For local deployment
-$ `git clone https://github.com/gsi-alejandro/ng-test.git && cd ng-test`
-
-$ `npm i -g serve` (optional you can use any other npm package to create the local server)
-
-$ `ng build --prod && serve -s dist`
-
-Then go to the shown url in console by serve npm package.
-
-$ `ng test` (to see run test)
-
-Notice: The @angular/cli package must be installed
-
+# NgTest 
 
 ﻿## Introduction
 
@@ -64,3 +50,16 @@ The module do the following:
     - Create data o Title of the spark o Tags o Number of IoCs 
 - The specific API endpoint we want you to use is: “LIST SPARKS BY TAG” and you can consider doing infinite scroll by interacting with the following parameters: 
 - Since id o Limit
+
+## For Local Deployment
+$ `git clone https://github.com/gsi-alejandro/ng-test.git && cd ng-test`
+
+$ `npm i -g serve` (optional you can use any other npm package to create the local server)
+
+$ `ng build --prod && serve -s dist`
+
+Then go to the shown url in console by serve npm package.
+
+$ `ng test` (to see run test)
+
+Notice: The @angular/cli package must be installed
